@@ -28,7 +28,7 @@ BLACKLIST_CHAT = list(map(int, os.getenv(
 RMBG_API = os.getenv("RMBG_API", "KsPwpgY1Mncmr98ncrWpwZ22")
 
 # URL MongoDB (pastikan sudah di-encode username/password)
-MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://Veluebot:Medan2018%40@cluster0.daj2n.mongodb.net/fatcatdb?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://fatcatVbot:Medan2018@cluster0.wih5v3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 # Log channel bot
 LOGS_MAKER_UBOT = os.getenv("LOGS_MAKER_UBOT", "-1003047431974")
