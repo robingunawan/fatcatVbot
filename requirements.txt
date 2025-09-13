@@ -10,7 +10,7 @@ motor
 dnspython
 GitPython
 bs4
-Pillow==9.5.0
+Pillow>=10.0.0
 pymediainfo
 requests
 unidecode
