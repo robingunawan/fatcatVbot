@@ -19,8 +19,9 @@ BLACKLIST_CHAT = list(map(int, os.getenv("BLACKLIST_CHAT", "-1002125842026 -1002
 
 RMBG_API = os.getenv("RMBG_API", "KsPwpgY1Mncmr98ncrWpwZ22")
 
-MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://fatcatVbot:Medan2018@@cluster0.wih5v3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URL = os.getenv("MONGO_URL = "mongodb+srv://fatcatVbot:Medan2018%40@cluster0.abcd123.mongodb.net/fatcatdb?retryWrites=true&w=majority")
 
 LOGS_MAKER_UBOT = os.getenv("LOGS_MAKER_UBOT", "-1003047431974")
+
 
 USER_GROUP = os.getenv("USER_GROUP", "@cari_teman_virtual_online")
