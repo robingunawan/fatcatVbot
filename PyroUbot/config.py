@@ -1,22 +1,23 @@
 import os
 from dotenv import load_dotenv
+from urllib.parse import quote_plus
 
 # Load environment variables from .env file
 load_dotenv(".env")
 
 # Maksimum bot yang berjalan
-MAX_BOT = int(os.getenv("MAX_BOT", "100"))
+MAX_BOT = int(os.getenv("MAX_BOT", 100))
 
 # Daftar developer
 DEVS = list(map(int, os.getenv("DEVS", "1815592994").split()))
 
 # Telegram API
-API_ID = int(os.getenv("API_ID", "25453211"))
+API_ID = int(os.getenv("API_ID", 25453211))
 API_HASH = os.getenv("API_HASH", "141cef82dd3e88877dab990125721079")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "7300174040:AAGnaM3oiGIMWW1peUQWRjo347pTKBZToe8")
 
 # Owner ID
-OWNER_ID = int(os.getenv("OWNER_ID", "1815592994"))
+OWNER_ID = int(os.getenv("OWNER_ID", 1815592994))
 
 # Daftar chat yang diblacklist
 BLACKLIST_CHAT = list(map(int, os.getenv(
@@ -27,8 +28,12 @@ BLACKLIST_CHAT = list(map(int, os.getenv(
 # API untuk remove bg
 RMBG_API = os.getenv("RMBG_API", "KsPwpgY1Mncmr98ncrWpwZ22")
 
-# URL MongoDB (pastikan sudah di-encode username/password)
-MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://fatcatVbot:Medan2018@cluster0.wih5v3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+# URL MongoDB (encode username/password untuk keamanan)
+raw_mongo_url = os.getenv(
+    "MONGO_URL",
+    "mongodb+srv://fatcatVbot:Medan2018@cluster0.wih5v3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+)
+MONGO_URL = raw_mongo_url.replace("@", "%40")  # encode jika ada karakter spesial
 
 # Log channel bot
 LOGS_MAKER_UBOT = os.getenv("LOGS_MAKER_UBOT", "-1003047431974")
