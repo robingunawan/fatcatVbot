@@ -27,7 +27,7 @@ gpytranslate
 httpx[http2]
 gtts
 youtube-search-python
-pymongo
+pymongo==4.3.3
 yt-dlp
 wget
 python-dateutil
