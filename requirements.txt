@@ -6,7 +6,7 @@ py-tgcalls==2.0.2
 rich==13.7.1
 pytz==2024.1
 psutil
-motor
+motor==3.1.2
 dnspython
 GitPython
 bs4
