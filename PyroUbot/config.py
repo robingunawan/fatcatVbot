@@ -38,7 +38,7 @@ MONGO_HOST = os.getenv("MONGO_HOST", "cluster0.wih5v3o.mongodb.net")
 MONGO_URL = f"mongodb+srv://{quote_plus(MONGO_USER)}:{quote_plus(MONGO_PASS)}@{MONGO_HOST}/{MONGO_DB}?retryWrites=true&w=majority&appName=Cluster0"
 
 # Log channel bot
-LOGS_MAKER_UBOT = os.getenv("LOGS_MAKER_UBOT", "-1003047431974")
+LOGS_MAKER_UBOT = os.getenv("LOGS_MAKER_UBOT", "-1002985186376")
 
 # User group Telegram
-USER_GROUP = os.getenv("USER_GROUP", "@cari_teman_virtual_online")
+USER_GROUP = os.getenv("USER_GROUP", "@FatCatMart")
