@@ -175,7 +175,10 @@ async def free_trial_callback(client, callback_query):
     # Cek apakah user sudah pernah mendapat premium gratis
     free_users = await get_list_from_vars(client.me.id, "FREE_PREM_USERS")
     if user_id in free_users:
-        return await callback_query.answer("❌ Anda sudah menggunakan akses free trial sebelumnya!", show_alert=True)
+        return await callback_query.answer(
+            "❌ Anda sudah menggunakan akses free trial sebelumnya!",
+            show_alert=True
+        )
 
     # Tambahkan 1 hari premium
     now = datetime.now(timezone("Asia/Jakarta"))
@@ -186,19 +189,23 @@ async def free_trial_callback(client, callback_query):
     await add_to_vars(client.me.id, "FREE_PREM_USERS", user_id)
 
     # Kirim pesan ke user dengan status free trial
-    await callback_query.answer("✅ Anda mendapatkan akses free trial selama 1 hari!", show_alert=True)
-    
-    # Kirim pesan dengan tombol inline
+    await callback_query.answer(
+        "✅ Anda mendapatkan akses free trial selama 1 hari!",
+        show_alert=True
+    )
+
+    # Tombol inline untuk membuat Userbot
     buttons = [
         [InlineKeyboardButton("🔥 ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 🔥", callback_data="buat_ubot")],
     ]
-    await bot.send_message(
+
+    await client.send_message(
         user_id,
-        f"""
+        """
 <blockquote><b>✅ Akses free trial selama 1 hari telah diaktifkan!</b>
 
 <b>💬 Dengan akses ini, Anda sekarang dapat membuat Userbot Anda sendiri.</b></blockquote>
 """,
         reply_markup=InlineKeyboardMarkup(buttons),
-  )
+    )
     
